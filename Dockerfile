@@ -1,5 +1,8 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-alpine
+
 WORKDIR /app
-COPY JavaCode.java .
-RUN javac JavaCode.java
-CMD ["java", "JavaCode"]
+COPY javaCode.java .
+
+RUN javac javaCode.java
+
+CMD ["java", "javaCode"]
